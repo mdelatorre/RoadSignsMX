@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+
+<roadsignpreset country="MX">
+<!--
+roadsigns plugin preset file for Spanish/Mexico (MX)
+-->
+	<sign ref="MX:SR-6" icon="SR-6" name="STOP (SR-6)" es.name="ALTO (SR-6)" useful="true"
+		long_name="Indicates that the vehicle must come to a complete stop. 
+		They are placed at the following points:
+		1. At the intersection level accesses to restrict the passage to 
+		vehicles.
+		2. Before crossing a highway or urban road with a railway, pedestrian 
+		crossing or bike path. This sign is placed in the precise place where 
+		vehicles must stop. Complement with the STOP STRIPE (M-6)."
+		es.long_name="Indica que el vehiculo debe detenerse complemtamente. Se 
+				colocan en los siguientes puntos: 
+				1. En los accesos de las intersecciones a nivel para 
+				restringir el paso a los vehículos. 
+				2. Antes del cruce de una carretera o vialidad urbana con una 
+				vía férrea, paso peatonal o ciclovía. 
+				Esta señal se coloca en el lugar preciso en donde 
+				deben detenerse los vehículos, para lo cual se debe 
+				complementar con la marca RAYA DE ALTO (M-6)."  
+		wiki="Tag:highway=stop"
+		es.wiki="ES:Tag:highway=stop">
+		<tag key="highway" value="stop"/>	
+	</sign>
+	
+	<sign ref="MX:SR-7" icon="SR-7" name="GIVE WAY (SR-7)" es.name="CEDA EL PASO (SR-7)" useful="true"
+		long_name="Indicates that the driver has to stop or slow down the speed of 
+		your vehicle, when necessary to yield the passage to the traffic to 
+		which it joins or crosses. The GIVE WAY sign is not considered
+		a substitute for the STOP (SR-6)."
+		es.long_name="Indica que el conductor tiene que detenerse o aminorar la 
+		velocidad de su vehículo, cuando sea necesario ceder el paso al 
+		tránsito al que se incorpora o cruza. 
+		La señal de CEDA EL PASO no se considera como un sustituto de la señal
+		ALTO (SR-6)."
+		wiki="Key:give_way"
+		es.wiki="ES:Key:give_way">
+		<tag key="highway" value="give_way"/>
+	</sign>
+
+	<sign ref="MX:SR-8" icon="SR-8" name="INSPECTION (SR-8)" es.name="INSPECCIÓN (SR-8)" useful="false"
+		long_name="It is used to instruct drivers to obligatorily stop at a 
+		certain place for a review by part of the corresponding authorities. 
+		The signal will carry a board (SIG) additionaly with the respective legend, 
+		such as: police, military, immigration, customs, among others."
+		es.long_name="Se utiliza para indicar a los conductores que deben 
+		detenerse obligatoriamente en determinado lugar para una revisión por 
+		parte de las autoridades correspondientes. La señal llevará un tablero
+		adicional (SIG) con la leyenda respectiva, tal como: police, military, 
+		immigration, customs, entre otros."
+		wiki=""
+		es.wiki="">
+		<tag key="$auth_id" value="checkpoint" ident="mode"/>
+			<parameter 
+			ident="auth_id" 
+			type="text" 
+			input="textfield" 
+			text="Legend" 
+			es.text="Leyenda"
+			prefix=""
+			suffix="" 
+			values="" 
+			default="police" 
+			field_width="12"
+		/>
+		<supplementary id="MX:SIG"/>
+	  </sign>
+
+	<sign ref="MX:SR-9-$val" icon="SR-9" name="SPEED LIMIT (SR-9)" es.name="VELOCIDAD (SR-9)" useful="true"
+		long_name="Used to indicate the maximum speed limit allowed in the 
+		section of the highway or urban road, being able also to be established 
+		by traffic lane. Expressed in multiples of 10 km/h."
+		es.long_name="Se utiliza para indicar el límite máximo de la velocidad 
+		permitida en el tramo de la carretera o vialidad urbana, pudiendo 
+		establecerse también por carril de circulación. Expresada 
+		en múltiplos de 10 km/h."
+		wiki="Key:maxspeed"
+		es.wiki="ES:Key:maxspeed">
+		<tag key="maxspeed" value="$val" />
+		<parameter 
+			ident="val" 
+			type="int" 
+			input="combo" 
+			text="speed-limit" 
+			es.text="velocidad"
+			suffix="km/h" 
+			values="10,20,30,40,50,60,70,80,90,100,110,120" 
+			default="50" 
+			field_width="3"
+		/>
+	</sign>
+  
+	<sign ref="MX:SR-10" icon="SR-10" name="CONTINUOUS TURN RIGHT (SR-10)" es.name="VUELTA CONTINUA DERECHA (SR-10)" useful="false"
+		long_name="It is used at intersections controlled by traffic lights in 
+		which a right turn is allowed even if traffic that continues 
+		straight ahead indicates STOP."
+		es.long_name="Se emplea en las intersecciones controladas por 
+		semáforos en las cuales está permitida la vuelta a la derecha en forma 
+		continua aunque para el tránsito que siga de frente se indique ALTO."
+		wiki=""
+		es.wiki="">
+		<tag key="red_turn:right" value="true"/>
+	</sign>
+  
+  	<sign ref="MX:SR-11" icon="SR-11" name="CIRCULATION IN INTERSECTIONS (SR-11)" es.name="CIRCULACIÓN EN INTERSECCIONES (SR-11)" useful="false"
+		long_name="It is used in those intersections where the obligation to 
+		circulate in the direction shown, in order to avoid the invasion of a 
+		lane with contrary traffic.
+		The arrow is positioned horizontally or at an angle indicating the 
+		direction of traffic."
+		es.long_name="Se usa en aquellas intersecciones donde se indique la 
+		obligación de circular en el sentido mostrado, con el fin de evitar la
+		invasión de un carril con circulación contraria. La flecha se coloca 
+		horizontal o inclinada indicando el sentido del tránsito."
+		wiki=""
+		es.wiki="">
+
+	</sign>
+
+  	<sign ref="MX:SR-11A" icon="SR-11A" name="DIVIDED CIRCULATION (SR-11A)" es.name="CIRCULACIÓN DIVIDIDA (SR-11A)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="" value=""/>
+	</sign>
+
+  	<sign ref="MX:SR-12" icon="SR-12" name="ONLY LEFT TURN (SR-12)" es.name="SÓLO VUELTA IZQUIERDA (SR-12)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="" value=""/>
+	</sign>
+	
+  	<sign ref="MX:SR-13" icon="SR-13" name="KEEP YOUR RIGHT (SR-13)" es.name="CONSERVE SU DERECHA (SR-13)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="" value=""/>
+	</sign>
+	
+  	<sign ref="MX:SR-14" icon="SR-14" name="DOUBLE CIRCULATION (SR-14)" es.name="DOBLE CIRCULACIÓN (SR-14)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="oneway" value="no"/>
+	</sign>
+
+  	<sign ref="MX:SR-15" icon="SR-15" name="RESTRICTED HEIGHT CLEARANCE (SR-15)" es.name="ALTURA LIBRE RESTRINGIDA (SR-15)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+		<tag key="maxheight" value="$val" />
+		<parameter 
+			ident="val" 
+			type="int" 
+			input="combo" 
+			text="height-limit" 
+			es.text="límite de altura"
+			suffix="m" 
+			values="" 
+			default="4.90" 
+			field_width="4"
+		/>
+	</sign>
+
+  	<sign ref="MX:SR-16" icon="SR-16" name="RESTRICTED WIDTH CLEARANCE (SR-16)" es.name="ANCHURA LIBRE RESTRINGIDA (SR-16)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+		<tag key="maxwidth" value="$val" />
+		<parameter 
+			ident="val" 
+			type="int" 
+			input="combo" 
+			text="width-limit" 
+			es.text="límite de ancho"
+			suffix="m" 
+			values="" 
+			default="5.50" 
+			field_width="4"
+		/>
+	</sign>
+	
+	  	<sign ref="MX:SR-17" icon="SR-17" name="RESTRICTED WEIGHT (SR-17)" es.name="PESO RESTRINGIDO (SR-17)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+		<tag key="maxweight" value="$val" />
+		<parameter 
+			ident="val" 
+			type="int" 
+			input="combo" 
+			text="weight-limit" 
+			es.text="límite de peso"
+			suffix="tons" 
+			values="" 
+			default="10" 
+			field_width="2"
+		/>
+	</sign>
+
+  	<sign ref="MX:SR-18" icon="SR-18" name="NO PASSING (SR-18)" es.name="PROHIBIDO REBASAR (SR-18)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="overtaking" value="no"/>
+	</sign>
+	
+	  	<sign ref="MX:SR-19" icon="SR-19" name="PROHIBITED STOP (SR-19)" es.name="PARADA PROHIBIDA (SR-19)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="parking:lane" value="no_stopping"/>
+	</sign>
+
+  	<sign ref="MX:SR-20" icon="SR-20" name="DO NOT STOP (SR-20)" es.name="NO PARAR (SR-20)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="parking:lane" value="no_stopping"/>
+	</sign>
+	
+	  	<sign ref="MX:SR-21" icon="SR-21" name="PARKING ALLOWED (SR-21)" es.name="ESTACIONAMIENTO PERMITIDO (SR-21)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="amenity" value="parking"/>
+	</sign>
+  	<sign ref="MX:SR-22" icon="SR-22" name="PARKING NOT ALLOWED (SR-22)" es.name="PROHIBIDO ESTACIONARSE (SR-22)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="parking:lane" value="no_parking"/>
+	</sign>
+	
+	  	<sign ref="MX:SR-23" icon="SR-23" name="RIGHT TURN PROHIBITED (SR-23)" es.name="PROHIBIDA LA VUELTA A LA DERECHA (SR-23)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="restriction" value="no_right_turn"/>
+	</sign>
+
+  	<sign ref="MX:SR-24" icon="SR-24" name="LEFT TURN PROHIBITED (SR-24)" es.name="PROHIBIDA LA VUELTA A LA IZQUIERDA (SR-24)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="restriction" value="no_left_turn"/>
+	</sign>
+	
+	  	<sign ref="MX:SR-25" icon="SR-25" name="U-TURN PROHIBITED (SR-25)" es.name="PROHIBIDO EL RETORNO (SR-25)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	<tag key="restriction" value="no_u_turn"/>
+	</sign>
+
+	  	<sign ref="MX:SR-25A" icon="SR-25A" name="U-TURN ALLOWED (SR-25A)" es.name="RETORNO PERMITIDO (SR-25A)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	</sign>
+
+	  	<sign ref="MX:SR-25B" icon="SR-25B" name="OVERPASS RETURN EXIT (SR-25B)" es.name="RETORNO SALIDA A DESNIVEL (PSV) (SR-25B)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	</sign>
+
+	  	<sign ref="MX:SR-25C" icon="SR-25C" name="UNDERPASS RETURN EXIT (SR-25C)" es.name="RETORNO SALIDA A DESNIVEL (PIV) (SR-25C)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki=""
+		es.wiki="">
+	</sign>
+
+	<sign ref="MX:SR-26" icon="SR-26" name="FORBIDEN STRAIGHT AHEAD (SR-26)" es.name="PROHIBIDO CIRCULAR DE FRENTE (SR-26)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki="Key:access"
+		es.wiki="ES:Key:access">
+		<tag key="access" value="no"/>
+	</sign>
+
+	  	<sign ref="MX:SR-27" icon="SR-27" 
+			name="UNDERPASS RETURN EXIT (SR-27)" 
+			es.name="PROHIBIDA LA CIRCULACIÓN DE BICICLETAS, VEHÍCULOS DE CARGA Y MOTOCICLETAS (SR-27)" 
+		useful="false"
+		long_name=""
+		es.long_name=""
+		wiki="Key:access"
+		es.wiki="ES:Key:access">
+		<tag key="access" value="no"/>
+		<tag key="motorcar" value="yes"/>
+	</sign>	
+	
+	<sign ref="MX:SR-26" icon="SR-26" name="FORBIDEN STRAIGHT AHEAD (SR-26)" es.name="PROHIBIDO CIRCULAR DE FRENTE (SR-26)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki="Key:access"
+		es.wiki="ES:Key:access">
+		<tag key="access" value="no"/>
+	</sign>
+
+	<sign ref="MX:SR-26" icon="SR-26" name="FORBIDEN STRAIGHT AHEAD (SR-26)" es.name="PROHIBIDO CIRCULAR DE FRENTE (SR-26)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki="Key:access"
+		es.wiki="ES:Key:access">
+		<tag key="access" value="no"/>
+	</sign>
+
+	<sign ref="MX:SR-26" icon="SR-26" name="FORBIDEN STRAIGHT AHEAD (SR-26)" es.name="PROHIBIDO CIRCULAR DE FRENTE (SR-26)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki="Key:access"
+		es.wiki="ES:Key:access">
+		<tag key="access" value="no"/>
+	</sign>
+
+	<sign ref="MX:SR-26" icon="SR-26" name="FORBIDEN STRAIGHT AHEAD (SR-26)" es.name="PROHIBIDO CIRCULAR DE FRENTE (SR-26)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki="Key:access"
+		es.wiki="ES:Key:access">
+		<tag key="access" value="no"/>
+	</sign>
+
+	<sign ref="MX:SR-26" icon="SR-26" name="FORBIDEN STRAIGHT AHEAD (SR-26)" es.name="PROHIBIDO CIRCULAR DE FRENTE (SR-26)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki="Key:access"
+		es.wiki="ES:Key:access">
+		<tag key="access" value="no"/>
+	</sign>
+
+	<sign ref="MX:SR-26" icon="SR-26" name="FORBIDEN STRAIGHT AHEAD (SR-26)" es.name="PROHIBIDO CIRCULAR DE FRENTE (SR-26)" useful="false"
+		long_name=""
+		es.long_name=""
+		wiki="Key:access"
+		es.wiki="ES:Key:access">
+		<tag key="access" value="no"/>
+	</sign>
+
+
+	<sign ref="MX:SIG" supplementary="yes" icon="SIG" name="General information" es.name="Información general">
+    </sign> 
+	
+</roadsignpreset>
