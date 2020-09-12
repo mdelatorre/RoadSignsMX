@@ -2,7 +2,11 @@
 
 <roadsignpreset country="MX">
 <!--
-roadsigns plugin preset file for Spanish/Mexico (MX)
+RoadSigns JOSM plugin preset file for Mexico (MX)
+
+	Author: 	Manuel delaTorre (manuel @ delatorre.mx)
+	License:	GNU General Public License v2.0 
+	
 -->
 	<sign ref="MX:SR-6" icon="SR-6" name="STOP (SR-6)" es.name="ALTO (SR-6)" useful="true"
 		long_name="Indicates that the vehicle must come to a complete stop. 
