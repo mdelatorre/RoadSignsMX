@@ -14,7 +14,7 @@ To install the Mexico preset follow these instructions:
 2. Click on the '''Edit''' button in the lower left of the window.
 3. Click the '''+''' button to add a new entry.
 4. Select the new entry and add the following keys/values. Where PATH is the URI where you have installed the preset.   
-<br />
+
 | Key          | Value                       |
 |--------------|-----------------------------|
 | code         | MX                          |
