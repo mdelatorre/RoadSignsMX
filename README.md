@@ -5,17 +5,15 @@
 
 One limitation with this plugin is the limited number of country presets available. Here I present the Mexico preset available to download at [https://github.com/mdelatorre/RoadSignsMX RoadSignsMX]([OSM]]) github repository 
 
-### RoadSignsMX installation 
+## RoadSignsMX installation 
 
 
 To install the Mexico preset follow these instructions:
 <br />
-
-# Search for the following key entry <code>'''plugin.roadsigns.presets'''</code> in the JOSM advanced preferences. (available when in expert mode).
-# Click on the '''Edit''' button in the lower left of the window.
-# Click the '''+''' button to add a new entry.
-# Select the new entry and add the following keys/values. Where PATH is the URI where you have installed the preset.   
-
+1. Search for the following key entry <code>'''plugin.roadsigns.presets'''</code> in the JOSM advanced preferences. (available when in expert mode).
+2. Click on the '''Edit''' button in the lower left of the window.
+3. Click the '''+''' button to add a new entry.
+4. Select the new entry and add the following keys/values. Where PATH is the URI where you have installed the preset.   
 <br />
 {| class="wikitable" style="text-align: center; margin-left: 100px;;"
 |+
