@@ -1,7 +1,6 @@
 # Mexico road signs preset for RoadSigns JOSM plugin
 
-
-[RoadSigns] (https://wiki.openstreetmap.org/wiki/JOSM/Plugins/RoadSigns) is a plugin for JOSM that offers a GUI for selecting traffic signs from a list of coutry presets. You simple click on the road sign images and you can generate combinations of signs and tagging suggestions. The plugin as is has limited number of presets. So I created the Mexico road signs preset.
+[RoadSigns](https://wiki.openstreetmap.org/wiki/JOSM/Plugins/RoadSigns) is a plugin for **JOSM** that offers a GUI for selecting traffic signs from a list of coutry presets. You simple click on the road sign images and you can generate combinations of signs and tagging suggestions. The plugin has limited number of presets. So I created the Mexico road signs preset. :mexico:
 
 ## RoadSignsMX installation 
 
@@ -19,6 +18,12 @@ To install the Mexico preset follow these instructions:
 | preset-path  | <PATH>/roadsignpresetMX.xml |
 | icon-path    | <PATH>/images/              |
 
+## Development stage
+
+> STAGE: Implementation & Coding :orange_circle:
+
+The preset curently is functional but still there are mexican road signs to be added. I encourage you to use it and tell me any errors or mistakes you find.
+
 ## Additional Information
 
-For more information please contact the developer [Manuel delaTorre] (https://www.openstreetmap.org/user/mdelatorre OpenStreet User Profile)
+For more information please contact the developer [Manuel delaTorre](https://www.openstreetmap.org/user/mdelatorre "Manuel OSM profile")
