@@ -15,21 +15,9 @@ To install the Mexico preset follow these instructions:
 3. Click the '''+''' button to add a new entry.
 4. Select the new entry and add the following keys/values. Where PATH is the URI where you have installed the preset.   
 <br />
-{| class="wikitable" style="text-align: center; margin-left: 100px;;"
-|+
-!Key
-!Value
-|-
-|code
-|MX
-|-
-|display-name
-|Mexico
-|-
-|preset-path
-|<PATH>/roadsignpresetMX.xml
-|-
-|icon-path
-|<PATH>/images/
-|}
-<br />
+| Key          | Value                       |
+|--------------|-----------------------------|
+| code         | MX                          |
+| display-name | Mexico                      |
+| preset-path  | <PATH>/roadsignpresetMX.xml |
+| icon-path    | <PATH>/images/              |
