@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-9"?>
 
 <roadsignpreset country="MX">
 <!--
@@ -9,6 +9,18 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 	License: GNU General Public License v2.0 
 	
 -->
+
+<!-- ===================================================================
+            VERTICAL RESTRICTIVE SIGNALS / SEÑALES RESTRICTIVAS  
+     =================================================================== -->
+	 
+<!-- NOTES: 
+
+	1.	Key "warning" is used in Mapillary as a traffic sign category. 
+	2.	Key "regulatory" is used in Mapillary as a traffic sign category.
+	3.	Key "information" is used in Mapillary as a traffic sign category.
+-->
+
 	<sign ref="MX:SR-6" icon="SR-6" useful="true"
 			name="STOP (SR-6)" 
 			es.name="ALTO (SR-6)" 
@@ -31,6 +43,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki="Tag:highway=stop"
 			es.wiki="ES:Tag:highway=stop">
 		<tag key="highway" value="stop"/>	
+		<tag key="regulatory" value="stop"/>
 	</sign>
 	
 	<sign ref="MX:SR-7" icon="SR-7" useful="true"
@@ -48,6 +61,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki="Key:give_way"
 			es.wiki="ES:Key:give_way">
 		<tag key="highway" value="give_way"/>
+		<tag key="regulatory" value="yield"/>
 	</sign>
 
 	<sign ref="MX:SR-8" icon="SR-8" useful="false"
@@ -64,13 +78,14 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			immigration, customs, entre otros."
 			wiki=""
 			es.wiki="">
+		<tag key="warning" value="checkpoint"/>
 		<tag key="$auth_id" value="checkpoint" ident="mode"/>
 			<parameter 
 			ident="auth_id" 
 			type="text" 
 			input="textfield" 
-			text="Legend" 
-			es.text="Leyenda"
+			text="Sign legend" 
+			es.text="Leyenda del letrero"
 			prefix=""
 			suffix="" 
 			values="" 
@@ -80,7 +95,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 		<supplementary id="MX:SIG"/>
 	  </sign>
 
-	<sign ref="MX:SR-9-$val" icon="SR-9" useful="true"
+	<sign ref="MX:SR-9-$val" icon="SR-9-60" useful="true"
 			name="SPEED LIMIT (SR-9)" 
 			es.name="VELOCIDAD (SR-9)"
 			long_name="Used to indicate the maximum speed limit allowed in the 
@@ -92,6 +107,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			en múltiplos de 10 km/h."
 			wiki="Key:maxspeed"
 			es.wiki="ES:Key:maxspeed">
+		<tag key="regulatory" value="maximum-speed-limit-$val"/>
 		<tag key="maxspeed" value="$val" />
 		<parameter 
 			ident="val" 
@@ -100,8 +116,8 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			text="speed-limit" 
 			es.text="velocidad"
 			suffix="km/h" 
-			values="10,20,30,40,50,60,70,80,90,100,110,120" 
-			default="50" 
+			values="5,10,20,30,40,50,90,90,90,90,100,110,120" 
+			default="60" 
 			field_width="3"
 		/>
 	</sign>
@@ -118,6 +134,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="red_turn:right" value="true"/>
+		<tag key="regulatory" value="turn-right"/>
 	</sign>
   
   	<sign ref="MX:SR-11" icon="SR-11" useful="false"
@@ -134,6 +151,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			horizontal o inclinada indicando el sentido del tránsito."
 			wiki=""
 			es.wiki="">
+		<tag key="regulatory" value="keep-right"/>
 
 	</sign>
 
@@ -144,7 +162,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.long_name=""
 			wiki=""
 			es.wiki="">
-		<tag key="" value=""/>
+		<tag key="regulatory" value="keep-left"/>
 	</sign>
 
   	<sign ref="MX:SR-12" icon="SR-12" useful="false"
@@ -154,7 +172,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.long_name=""
 			wiki=""
 			es.wiki="">
-		<tag key="" value=""/>
+		<tag key="regulatory" value="turn-left"/>
 	</sign>
 	
   	<sign ref="MX:SR-13" icon="SR-13" useful="false"
@@ -164,7 +182,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.long_name=""
 			wiki=""
 			es.wiki="">
-		<tag key="" value=""/>
+		<tag key="regulatory" value="no-overtaking-by-heavy-goods-vehicles"/>
 	</sign>
 	
   	<sign ref="MX:SR-14" icon="SR-14" useful="false"
@@ -175,6 +193,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="oneway" value="no"/>
+		<tag key="regulatory" value="two-way"/>
 	</sign>
 
   	<sign ref="MX:SR-15" icon="SR-15" useful="false"
@@ -185,6 +204,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="maxheight" value="$val" />
+		<tag key="regulatory" value="height-limit"/>
 		<parameter 
 			ident="val" 
 			type="int" 
@@ -206,6 +226,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="maxwidth" value="$val" />
+		<tag key="regulatory" value="width-limit"/>
 		<parameter 
 			ident="val" 
 			type="int" 
@@ -226,7 +247,8 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.long_name=""
 			wiki=""
 			es.wiki="">
-		<tag key="maxweight" value="$val" />
+		<tag key="maxweight" value="$val"/>
+		<tag key="regulatory" value="weight-limit"/>
 		<parameter 
 			ident="val" 
 			type="int" 
@@ -248,6 +270,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="overtaking" value="no"/>
+		<tag key="regulatory" value="do-not-pass"/>
 	</sign>
 	
 	  	<sign ref="MX:SR-19" icon="SR-19" useful="false"
@@ -258,6 +281,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="parking:lane" value="no_stopping"/>
+		<tag key="regulatory" value="no-passenger-loading"/>		
 	</sign>
 
   	<sign ref="MX:SR-20" icon="SR-20" 
@@ -268,6 +292,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="parking:lane" value="no_stopping"/>
+		<tag key="regulatory" value="no-stopping"/>
 	</sign>	
 	
 	<sign ref="MX:SR-21" icon="SR-21" useful="false"
@@ -278,6 +303,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="amenity" value="parking"/>
+		<tag key="information" value="parking"/>
 	</sign>
 	
   	<sign ref="MX:SR-22" icon="SR-22" useful="false"
@@ -288,6 +314,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="parking:lane" value="no_parking"/>
+		<tag key="regulatory" value="no-parking"/>
 	</sign>
 	
 	  	<sign ref="MX:SR-23" icon="SR-23" useful="false"
@@ -298,6 +325,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="restriction" value="no_right_turn"/>
+		<tag key="regulatory" value="no-right-turn"/>
 	</sign>
 
   	<sign ref="MX:SR-24" icon="SR-24" useful="false"
@@ -308,6 +336,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="restriction" value="no_left_turn"/>
+		<tag key="regulatory" value="no-left-turn"/>
 	</sign>
 	
 	  	<sign ref="MX:SR-25" icon="SR-25" useful="false"
@@ -318,18 +347,20 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 		<tag key="restriction" value="no_u_turn"/>
+		<tag key="regulatory" value="no-u-turn"/>
 	</sign>
 
-	  	<sign ref="MX:SR-25A" icon="SR-25A" useful="false"
+	<sign ref="MX:SR-25A" icon="SR-25A" useful="false"
 			name="U-TURN ALLOWED (SR-25A)" 
 			es.name="RETORNO PERMITIDO (SR-25A)"
 			long_name=""
 			es.long_name=""
 			wiki=""
 			es.wiki="">
+		<tag key="regulatory" value="u-turn"/>
 	</sign>
 
-	  	<sign ref="MX:SR-25B" icon="SR-25B" useful="false"
+	<sign ref="MX:SR-25B" icon="SR-25B" useful="false"
 			name="OVERPASS RETURN EXIT (SR-25B)" 
 			es.name="RETORNO SALIDA A DESNIVEL (PSV) (SR-25B)"
 			long_name=""
@@ -346,20 +377,23 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 	</sign>
-
+	
 	<sign ref="MX:SR-26" icon="SR-26" useful="false"
-			name="STRAIGHT AHEAD PROHIBITED (SR-26)" 
+			name="NO STRAGHT THROUGH (SR-26)" 
 			es.name="PROHIBIDO CIRCULAR DE FRENTE (SR-26)"
 			long_name=""
 			es.long_name=""
 			wiki="Key:access"
 			es.wiki="ES:Key:access">
 		<tag key="access" value="no"/>
+		<tag key="regulatory" value="no-straight-through"/>
 	</sign>
 
-	  	<sign ref="MX:SR-27" icon="SR-27" useful="false"
-			name="BICYCLE, HGV, MOTORCYCLE VEHICLES TRAFFIC PROHIBITED (SR-27)" 
-			es.name="PROHIBIDA LA CIRCULACIÓN DE BICICLETAS, VEHÍCULOS DE CARGA Y MOTOCICLETAS (SR-27)" 
+	<sign ref="MX:SR-27" icon="SR-27" useful="false"
+			name="BICYCLE, HGV, MOTORCYCLE VEHICLES TRAFFIC 
+					PROHIBITED (SR-27)" 
+			es.name="PROHIBIDA LA CIRCULACIÓN DE BICICLETAS, VEHÍCULOS 
+					DE CARGA Y MOTOCICLETAS (SR-27)" 
 			long_name=""
 			es.long_name=""
 			wiki="Key:access"
@@ -371,22 +405,23 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 		<tag key="motorcycle" value="no"/>
 		<tag key="mofa" value="no"/>
 		<tag key="moped" value="no"/>
+		<tag key="regulatory" value="no-heavy-goods-vehicles-motorcycles-or-bicycles"/>
 	</sign>
 
-
-	  	<sign ref="MX:SR-28" icon="SR-28" useful="false"
+	<sign ref="MX:SR-28" icon="SR-28" useful="false"
 			name="ANIMAL TRACTION VEHICLES TRAFFIC PROHIBITED (SR-28)" 
-			es.name="PROHIBIDA LA CIRCULACIÓN DE VEHÍCULOS DE TRACCIÓN ANIMAL (SR-28)" 
+			es.name="PROHIBIDA LA CIRCULACIÓN DE VEHÍCULOS DE TRACCIÓN 
+					ANIMAL (SR-28)" 
 			long_name=""
 			es.long_name=""
 			wiki="Key:access"
 			es.wiki="ES:Key:access">
 		<tag key="access" value="yes"/>
 		<tag key="carriage" value="no"/>
+		<tag key="regulatory" value="no-carts"/>
 	</sign>	
 
-
-	  	<sign ref="MX:SR-29" icon="SR-29" useful="false"
+	<sign ref="MX:SR-29" icon="SR-29" useful="false"
 			name="AGRICULTURAL VEHICLES TRAFFIC PROHIBITED (SR-29)" 
 			es.name="PROHIBIDA LA CIRCULACIÓN DE VEHÍCULOS AGRÍCOLAS (SR-29)" 
 			long_name=""
@@ -395,9 +430,10 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.wiki="ES:Key:access">
 		<tag key="access" value="yes"/>
 		<tag key="agricultural" value="no"/>
+		<tag key="regulatory" value="no-tractors"/>
 	</sign>	
 
-	  	<sign ref="MX:SR-30" icon="SR-30" useful="false"
+	<sign ref="MX:SR-30" icon="SR-30" useful="false"
 			name="BICYCLE TRAFFIC PROHIBITED (SR-30)" 
 			es.name="PROHIBIDA LA CIRCULACIÓN DE BICICLETAS (SR-30)" 
 			long_name=""
@@ -406,9 +442,10 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.wiki="ES:Key:access">
 		<tag key="access" value="yes"/>
 		<tag key="bicycle" value="no"/>
+		<tag key="regulatory" value="no-bicycles"/>
 	</sign>	
 
-	  	<sign ref="MX:SR-31" icon="SR-31" useful="false"
+	<sign ref="MX:SR-31" icon="SR-31" useful="false"
 			name="PEDESTRIAN TRAFFIC PROHIBITED (SR-31)" 
 			es.name="PROHIBIDA LA CIRCULACIÓN DE PEATONES (SR-31)" 
 			long_name=""
@@ -417,9 +454,10 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.wiki="ES:Key:access">
 		<tag key="access" value="yes"/>
 		<tag key="foot" value="no"/>
+		<tag key="regulatory" value="no-pedestrians"/>
 	</sign>	
 
-	  	<sign ref="MX:SR-32" icon="SR-32" useful="false"
+	<sign ref="MX:SR-32" icon="SR-32" useful="false"
 			name="HGV TRAFFIC PROHIBITED (SR-32)" 
 			es.name="PROHIBIDA LA CIRCULACIÓN DE VEHÍCULOS DE CARGA (SR-32)" 
 			long_name=""
@@ -429,15 +467,17 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 		<tag key="access" value="yes"/>
 		<tag key="goods" value="no"/>
 		<tag key="hgv" value="no"/>
+		<tag key="regulatory" value="no-heavy-goods-vehicles"/>
 	</sign>	
 
-	  <sign ref="MX:SR-33" icon="SR-33" useful="false"
+	<sign ref="MX:SR-33" icon="SR-33" useful="false"
 			name="USE OF ACOUSTIC SIGNALS PROHIBITED (SR-33)" 
 			es.name="PROHIBIDO EL USO DE SEÑALES ACÚSTICAS (SR-33)" 
 			long_name=""
 			es.long_name=""
 			wiki=""
 			es.wiki="">
+		<tag key="regulatory" value="no-horn"/>
 	</sign>
 
 	<sign ref="MX:SR-34" icon="SR-34" useful="false"
@@ -447,6 +487,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.long_name=""
 			wiki=""
 			es.wiki="">
+		<tag key="regulatory" value="wear-seat-belt"/>
 	</sign>
 	
 	<sign ref="MX:SR-35" icon="SR-35" useful="false"
@@ -456,6 +497,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.long_name=""
 			wiki=""
 			es.wiki="">
+		<tag key="regulatory" value="no-lane-change-to-left"/>
 	</sign>	
 	
 	<sign ref="MX:SR-35A" icon="SR-35A" useful="false"
@@ -465,12 +507,15 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			es.long_name=""
 			wiki=""
 			es.wiki="">
+		<tag key="regulatory" value="no-lane-change-to-right"/>
 	</sign>		
 	
 	<sign ref="MX:SR-36" icon="SR-36" useful="false"
-			name="CHANGING TO THE RIGHT LANES OF TRAFFIC FORBIDDEN (SR-36)" 
-			es.name="PROHIBIDO CAMBIAR A LOS CARRILES DE LA DERECHA (SR-36)" 
-			long_name="Prohibition of circulation of foreign registed 
+			name="DRIVING INTO MEXICO FOR FOREIGN VEHICULES PROHIBITED 
+					WITHOUT PROPER PERMIT(SR-36)" 
+			es.name="PROHIBIDO EL PASO A VEHÍCULOS SIN PERMISO DE 
+					INTERNACIÓN (SR-36)" 
+			 long_name="Prohibition of circulation of foreign registed 
 						vehicles that do not have the permit to enter 
 						into Mexico territory."
 			es.long_name="Prohibición de transitar de vehículos matriculados 
@@ -479,7 +524,8 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			wiki=""
 			es.wiki="">
 	</sign>			
-	
+
+<!--	
 	<sign ref="MX:SR-37" icon="SR-37" useful="false"
 			name="TRAFFIC DIRECTION (SR-37)" 
 			es.name="SENTIDO DE CIRCULACIÓN (SR-37)" 
@@ -489,7 +535,7 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 						vehículos en la carretera o vialidad urbana."
 			wiki=""
 			es.wiki="">
-		<tag key="traffic_signals:direction" value="yes"/>
+		<tag key="traffic_signals:direction" value="$val"/>
 		<parameter 
 			ident="val" 
 			type="text" 
@@ -499,10 +545,98 @@ RoadSigns JOSM plugin preset file for Mexico (MX)
 			suffix="" 
 			values="forward,backward" 
 			default="forward" 
-			field_width="2"
+			field_width="8"
 		/>
+	</sign>
+-->
 
-	<sign ref="MX:SIG" supplementary="yes" icon="SIG" name="General information" es.name="Información general">
+<!--	
+	<sign ref="MX:SR-TABLERO" icon="sr-tablero-adicional" useful="false"
+			name="DOUBLE CURVE FIRST RIGHT (SP-8I)" 
+			es.name="TABLERO ADICIONAL (SP-8I)" 
+			long_name=""
+			es.long_name="">
+	</sign>	
+-->
+	
+<!-- ===================================================================
+                 VERTICAL WARNING SIGNALS / SEÑALES PREVENTIVAS  
+     =================================================================== -->	
+
+<!-- NOTES: 
+
+	1.	Key "warning" is used in Mapillary as a traffic sign category. 
+	2.	Key "regulatory" is used in Mapillary as a traffic sign category.
+-->
+	
+	<sign ref="MX:SP-6" icon="SP-6" useful="true"
+			name="CURVE TO THE RIGHT (SP-6)" 
+			es.name="CURVA A LA DERECHA (SP-6)" 
+			long_name=""
+			es.long_name=""
+			wiki=""
+			es.wiki="">
+		<tag key="warning" value="curve-right"/>
+	</sign>	
+	
+	<sign ref="MX:SP-6I" icon="SP-6I" useful="true"
+			name="CURVE TO THE LEFT (SP-6I)" 
+			es.name="CURVA A LA IZQUIERDA (SP-6I)" 
+			long_name=""
+			es.long_name=""
+			wiki=""
+			es.wiki="">
+		<tag key="warning" value="curve-left"/>
+	</sign>
+	
+	<sign ref="MX:SP-7" icon="SP-7" useful="false"
+			name=" SHARP RIGHT TURN (SP-7)" 
+			es.name="CURVA CERRADA A LA DERECHA (SP-7)" 
+			long_name=""
+			es.long_name=""
+			wiki=""
+			es.wiki="">
+		<tag key="warning" value="sharp-curve-right"/>
+	</sign>	
+	
+	<sign ref="MX:SP-7I" icon="SP-7I" useful="false"
+			name=" SHARP LEFT CURVE (SP-7I)" 
+			es.name="CURVA CERRADA A LA IZQUIERDA (SP-7I)" 
+			long_name=""
+			es.long_name=""
+			wiki=""
+			es.wiki="">
+		<tag key="warning" value="sharp-curve-left"/>
+	</sign>	
+	
+	<sign ref="MX:SP-8" icon="SP-8" useful="false"
+			name="DOUBLE CURVE FIRST RIGHT (SP-8)" 
+			es.name="CURVA INVERSA A LA DERECHA (SP-8)" 
+			long_name=""
+			es.long_name=""
+			wiki=""
+			es.wiki="">
+		<tag key="warning" value="double-curve-first-right"/>
+	</sign>	
+	
+	<sign ref="MX:SP-8I" icon="SP-8I" useful="false"
+			name="DOUBLE CURVE FIRST RIGHT (SP-8I)" 
+			es.name="CURVA INVERSA A LA IZQUIERDA (SP-8I)" 
+			long_name=""
+			es.long_name=""
+			wiki=""
+			es.wiki="">
+		<tag key="warning" value="double-curve-first-left "/>
+	</sign>	
+
+
+<!-- ===================================================================
+          
+==================================================================== -->
+
+	<sign ref="MX:SIG" supplementary="yes" icon="SIG" 
+			name="General information" 
+			es.name="Información general">
     </sign> 
 	
 </roadsignpreset>
